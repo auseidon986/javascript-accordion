@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Accordion</title>
+    <link rel="stylesheet" type="text/css" href = "style.css">
+  </head>
+  <body>
+
+    <script src="script.js" defer></script>
+    <script>
+
+      const accordions = [] // For latter uses
+
+      const buildAccordion = () => {
+        const wrappers = [...document.querySelectorAll('.aus-accordion')];
+        wrappers && wrappers.forEach(wrapper => {
+          accordions.push(new Accordions(wrapper))
+        })
+
+        const actors = [...document.querySelectorAll('[aria-ready="false"]')];
+        actors && actors.forEach(actor => {
+          actor.setAttribute('aria-ready', 'true')
+        })
+
+      }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        buildAccordion();
+      });
+
+    </script>
+
+    <h1>Javascript Accordion (Raw JS, CSS, HTML)</h1>
+
+    <div class="container component" aria-ready=false>
+
+      <div class="accordion aus-accordion">
+        <div class="aus-accordion__status">
+          <p>Currently selected section: <b></b> </p>
+        </div>
+        
+        <div class="accordion-items aus-accordion__accordion">
+
+          <div aria-expanded=true class="accordion-item" data-value='foo'>
+            <button class="accordion-item__button">
+              <span>foo</span>
+            </button>
+            <div class="accordion-item__text">
+              <p>Foo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+          <div aria-expanded=true class="accordion-item" data-value='bar'>
+            <button class="accordion-item__button">
+              <span>bar</span>
+            </button>
+            <div class="accordion-item__text">
+              <p>Bar Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+          <div aria-expanded=true class="accordion-item" data-value='zoo'>
+            <button class="accordion-item__button">
+              <span>zoo</span>
+            </button>
+            <div class="accordion-item__text">
+              <p>Zoo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+          <div aria-expanded=true class="accordion-item" data-value='aus'>
+            <button class="accordion-item__button">
+              <span>aus</span>
+            </button>
+            <div class="accordion-item__text">
+              <p>Aus Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
